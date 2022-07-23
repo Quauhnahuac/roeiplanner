@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="naturalPersonFields">
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly"/>
+
+		<field name="person_id" type="sql" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_PERSON_ID_LABEL" required="true"
+			query="SELECT id AS value FROM #__persons"/>
+
+		<field name="first_name" type="text" class="inputbox" 
+			label="COM_ROEIPLANNER_FIELD_FIRST_NAME_LABEL" />
+
+		<field name="middle_name" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_MIDDLE_NAME_LABEL" />
+
+		<field name="last_name" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_LAST_NAME_LABEL" />
+
+		<field name="gender" type="sql" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_GENDER_NAME_LABEL"
+			query="SELECT id AS value, gender AS text FROM #__genders" />
+
+		<field name="date_of_birth" type="date" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_DATE_OF_BIRTH_LABEL" />
+
+		<field name="user_id" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_USER_ID_LABEL" />
+	</fieldset>
+</form>

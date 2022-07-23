@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>COM_ROEIPLANNER</name>
+	<author>RV Breda</author>
+	<creationDate>21-06-2022</creationDate>
+	<license>GNU General Public License version 2 or later; see
+		LICENSE.txt</license>
+	<version>0.0.4</version>
+	<description>COM_ROEIPLANNER_XML_DESCRIPTION</description>
+	<namespace path="src">Roeiplanner\Component\Roeiplanner</namespace>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+ 
+	<files folder="site">
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<languages folder="site">
+		<language tag="nl-NL">language/nl-NL/com_roeiplanner.ini</language>
+	</languages>
+		
+	<administration>
+	
+		<menu img="class:default" link="option=com_roeiplanner">COM_ROEIPLANNER</menu>
+		
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+ 
+		<languages folder="admin">
+			<language tag="nl-NL">language/nl-NL/com_roeiplanner.ini</language>
+			<language tag="nl-NL">language/nl-NL/com_roeiplanner.sys.ini</language>
+		</languages>
+		
+	</administration>
+	
+</extension>

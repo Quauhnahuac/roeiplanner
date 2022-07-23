@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="legalPersonFields">
+		<field name="id" type="text" default="0" label="JGLOBAL_FIELD_ID_LABEL"
+			readonly="true" class="readonly"/>
+
+		<field name="person_id" type="sql" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_PERSON_ID_LABEL" required="true"
+			query="SELECT id AS value FROM #__persons"/>
+
+		<field name="full_name" type="text" class="inputbox" 
+			label="COM_ROEIPLANNER_FIELD_FULL_NAME_LABEL" />
+
+		<field name="short_name" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_SHORT_NAME_LABEL" />
+
+		<field name="sort_name" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_SORT_NAME_LABEL" />
+
+		<field name="coc_name" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_COC_NAME_LABEL" />
+
+		<field name="coc_number" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_COC_NUMBER_LABEL" />
+
+		<field name="coc_category" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_COC_CATEGORY_LABEL" />
+
+		<field name="website" type="text" class="inputbox"
+			label="COM_ROEIPLANNER_FIELD_WEBSITE_LABEL" />
+	</fieldset>
+</form>
