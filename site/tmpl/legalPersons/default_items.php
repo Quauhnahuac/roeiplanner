@@ -9,7 +9,12 @@ use Joomla\CMS\Router\Route;
 <style>
 
 </style>
-
+<div class="btn-group pull-right hidden-phone">
+	<label for="limit"class="element-invisible">
+		<?php echo Text::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?>
+	</label>
+	<?php echo $this->pagination->getLimitBox();?>
+</div>
 <table class="table">
 	<thead>
 		<tr>
@@ -21,6 +26,13 @@ use Joomla\CMS\Router\Route;
 			<th class="column-selector"><?php echo Text::_('COM_ROEIPLANNER_CLOSING_DATE'); ?></th>		
 		</tr>
 	</thead>
+	<tfoot>
+		<tr>
+			<td>
+				<?php echo $this->pagination->getListFooter();?>
+			</td>
+		</tr>
+	</tfoot>
 	<tbody>
 	<?php foreach ($this->items as $id => $item) :	?>
 		<tr>
