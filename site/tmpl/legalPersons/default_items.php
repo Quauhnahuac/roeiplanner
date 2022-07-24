@@ -10,10 +10,9 @@ use Joomla\CMS\Router\Route;
 
 </style>
 
-<table class="datasheet">
+<table class="table">
 	<thead>
 		<tr>
-			<th id="table-selector"></th>
 			<th class="column-selector"><?php echo Text::_('COM_ROEIPLANNER_FULL_NAME'); ?></th>
 			<th class="column-selector"><?php echo Text::_('COM_ROEIPLANNER_SHORT_NAME'); ?></th>
 			<th class="column-selector"><?php echo Text::_('COM_ROEIPLANNER_SORT_NAME'); ?></th>
@@ -25,7 +24,6 @@ use Joomla\CMS\Router\Route;
 	<tbody>
 	<?php foreach ($this->items as $id => $item) :	?>
 		<tr>
-			<td class="row-selector"></td>
 			<td class="cell"><?php echo $item->full_name; ?></td>
 			<td class="cell"><?php echo $item->short_name; ?></td>
 			<td class="cell"><?php echo $item->sort_name; ?></td>
