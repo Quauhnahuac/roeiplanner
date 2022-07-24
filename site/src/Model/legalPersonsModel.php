@@ -35,6 +35,40 @@ class LegalPersonsModel extends ListModel
 		parent::__construct($config);
 	}
 
+	protected function populateState($ordering = 'ordering', $direction = 'ASC')
+	{
+		$app = Factory::getApplication();
+
+		// List state information
+		$value = $app->input->get('limit', $app->get('list_limit', 0), 'uint');
+		$this->setState('list.limit', $value);
+
+		$value = $app->input->get('limitstart', 0, 'uint');
+		$this->setState('list.start', $value);
+
+		$orderCol = $app->input->get('filter_order', 'a.id');
+
+		if (!in_array($orderCol, $this->filter_fields))
+		{
+			$orderCol = 'a.id';
+		}
+
+		$this->setState('list.ordering', $orderCol);
+
+		$listOrder = $app->input->get('filter_order_Dir', 'ASC');
+
+		if (!in_array(strtoupper($listOrder), array('ASC', 'DESC', '')))
+		{
+			$listOrder = 'ASC';
+		}
+
+		$this->setState('list.direction', $listOrder);
+
+		$params = $app->getParams();
+		$this->setState('params', $params);
+
+	}
+
 	protected function getListQuery()
 	{
 		$db		= $this->getDbo();
@@ -49,5 +83,10 @@ class LegalPersonsModel extends ListModel
 		$query->from($db->quoteName('#__legal_persons').' AS a');
 		$query->order($db->escape('a.sort_name ASC'));
 		return $query;
+	}
+
+	public function getStart()
+	{
+		return $this->getState('list.start');
 	}
 }
