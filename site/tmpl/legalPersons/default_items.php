@@ -7,56 +7,7 @@ use Joomla\CMS\Router\Route;
 
 ?>
 <style>
-	.datasheet {
-		font-family: segoe ui;
-		font-size: 12px;
-		margin-bottom: 12px;
-	}
-	.datasheet th {
-		font-weight: 400;
-		padding: 0.25rem;
-	}
-	.datasheet td {
-		font-weight: 400;
-		padding: 0.25rem;
-	}
-	.datasheet thead tr th {
-		border: solid grey 1px;
-	}
-	.datasheet #table-selector {
-		width: 30px;
-	}
-	.datasheet > tbody > tr:nth-of-type(2n) > td:not(:first-child) {
-		background-color: #edf3fd;
-		border-right: solid white 1px;
-	}
-	.datasheet td.row-selector  {	
-		border: solid grey 1px;
-	}
-	.datasheet .row-selector {
-		border: solid lightgrey 1px;		
-	}	
-	.datasheet #table-selector:hover {
-		background-color: #d9ebf9;
-	}
-	.datasheet .column-selector:hover {
-		background-color: #d9ebf9;
-	}
-	.datasheet .row-selector:hover {
-		background-color: #d9ebf9;
-	}
-	.cell:empty {
-		font-size: 8px;
-		font-weight: 600;
-		vertical-align: top;
-		padding: 0;
-		color: #ffffff;
-	}
-	.cell:empty::after {
-		padding: 0 2px;
-		background-color: grey;		
-		content: "NULL";
-	}
+
 </style>
 
 <table class="datasheet">
