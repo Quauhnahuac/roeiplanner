@@ -32,15 +32,6 @@ use Joomla\CMS\Router\Route;
 			<td class="cell"><?php echo $item->closing_date; ?></td>
 		</tr>
 	<?php endforeach; ?>
-		<tr>
-			<td class="row-selector">*</td>
-			<td class="cell"></td>
-			<td class="cell"></td>
-			<td class="cell"></td>
-			<td class="cell"></td>
-			<td class="cell"></td>
-			<td class="cell"></td>
-		</tr>
 	</tbody>
 </table>
 
