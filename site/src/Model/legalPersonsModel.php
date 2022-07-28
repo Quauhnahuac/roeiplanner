@@ -89,4 +89,46 @@ class LegalPersonsModel extends ListModel
 	{
 		return $this->getState('list.start');
 	}
+	public function getMapParams()
+	{
+		if ($this->item) 
+		{
+			$this->mapParams = array(
+				'latitude' => $this->item->latitude,
+				'longitude' => $this->item->longitude,
+				'zoom' => 10,
+				'greeting' => $this->item->greeting
+			);
+			return $this->mapParams; 
+		}
+		else
+		{
+			throw new Exception('No helloworld details available for map', 500);
+		}
+	}
+
+	public function getMapSearchResults($mapbounds)
+	{
+		try 
+		{
+			$db    = JFactory::getDbo();
+			$query = $db->getQuery(true);
+			$query->select('h.greeting, h.latitude, h.longitude')
+			   ->from('#__helloworld as h')
+			   ->where('h.latitude > ' . $mapbounds['minlat'] . 
+				' AND h.latitude < ' . $mapbounds['maxlat'] .
+				' AND h.longitude > ' . $mapbounds['minlng'] .
+				' AND h.longitude < ' . $mapbounds['maxlng']);
+			$db->setQuery($query);
+			$results = $db->loadObjectList(); 
+		}
+		catch (Exception $e)
+		{
+			$msg = $e->getMessage();
+			JFactory::getApplication()->enqueueMessage($msg, 'error'); 
+			$results = null;
+		}
+
+		return $results; 
+	}
 }
